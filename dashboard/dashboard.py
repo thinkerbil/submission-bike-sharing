@@ -40,6 +40,8 @@ with st.sidebar:
 filtered_df = main_df[(main_df["dteday"] >= str(start_date)) & 
                        (main_df["dteday"] <= str(end_date))]
 
+filtered_df['dteday'] = pd.to_datetime(filtered_df['dteday'])
+
 # --- HEADER ---
 st.title("🚲 Capital Bikeshare: Business Performance Dashboard")
 st.markdown("Dashboard ini menyajikan analisis mendalam tentang perilaku penyewa sepeda berdasarkan waktu, cuaca, dan profil hari.")
